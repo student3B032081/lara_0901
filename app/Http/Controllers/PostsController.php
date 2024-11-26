@@ -26,4 +26,9 @@ class PostsController extends Controller
 
         return view('posts.show', $data);
     }
+    public function destory(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('admin.posts.index');
+    }
 }

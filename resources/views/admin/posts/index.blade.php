@@ -12,6 +12,11 @@
         <strong>完成！</strong> 成功儲存文章
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    <form action="{{route('admin.posts.destory',$post->id)}}" method="POST" style="display: inline-block">
+        @method('DELETE')
+        @csrf
+        <button class="btn btn-sm btn-danger" type="submit">刪除></button>
+    </form>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a class="btn btn-success btn-sm" href="{{ route('admin.posts.create') }}">新增</a>
     </div>
