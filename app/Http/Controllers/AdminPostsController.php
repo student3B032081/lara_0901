@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class AdminPostsController extends Controller
@@ -23,10 +24,13 @@ class AdminPostsController extends Controller
         Post::create($request->all());
         return redirect()->route('admin.posts.index');
     }
-    
-    public function edit($id)
+
+    public function edit(Post $post)
     {
-        return view('admin.posts.edit');
+        $data=[
+            'post' =>$post,
+        ];
+        return view('admin.posts.edit',$data);
     }
 
     public function update(Request $request, $id)
