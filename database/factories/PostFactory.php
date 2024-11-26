@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PostFactory extends Factory
 {
+
     /**
      * Define the model's default state.
      *
@@ -19,6 +20,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
+            'is_feature' => (bool) rand(0,1),
         ];
     }
 }
