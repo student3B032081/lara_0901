@@ -20,9 +20,10 @@ class AdminPostsController extends Controller
 
     public function store(Request $request)
     {
-        //
+        Post::create($request->all());
+        return redirect()->route('admin.posts.index');
     }
-
+    
     public function edit($id)
     {
         return view('admin.posts.edit');
