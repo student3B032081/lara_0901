@@ -17,7 +17,7 @@
 @include('layouts.shared.navbar')
 @yield('page-content')
 @include('layouts.shared.footer')
-
+@include('admin.layouts.partials.validation')
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

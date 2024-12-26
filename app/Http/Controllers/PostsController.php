@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\PostRequest;
 class PostsController extends Controller
 {
     public function index()
@@ -26,9 +26,14 @@ class PostsController extends Controller
 
         return view('posts.show', $data);
     }
-    public function destory(Post $post)
+
+
+    public function store(PostRequest $request)
     {
-        $post->delete();
-        return redirect()->route('admin.posts.index');
+        //
+    }
+    public function update(PostRequest $request)
+    {
+        //
     }
 }

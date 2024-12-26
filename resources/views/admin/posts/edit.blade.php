@@ -18,6 +18,13 @@
     <form action="/admin/posts/{{$post->id}}"method="POST" role="form">
         @method("PATCH")
         @csrf
+        @if ($errors->any())
+            @foreach($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>
+            @endforeach
+        @endif
         <div class="form-group">
             <label for="title" class="form-label">標題</label>
             <input name="title" class="form-control" placeholder="請輸入文章標題"
